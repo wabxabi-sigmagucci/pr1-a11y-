@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Мінімалістичний аудіоплеєр з кнопкою відтворення, таймером і смужкою прогресу.">
+    <title>Unknown Track — Audio Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="page">
+        <article class="player" aria-label="Аудіоплеєр">
+
+            <img
+                class="cover"
+                src="https://placehold.co/160x160/6D4AFF/FFFFFF?text=%E2%99%AB"
+                alt="Обкладинка Unknown Track із музичною нотою"
+                width="80"
+                height="80"
+            >
+
+            <div class="player-content">
+                <div class="track-info">
+                    <div class="track-text">
+                        <h1 class="track-title">Unknown Track</h1>
+                        <p class="track-author">Unknown Artist</p>
+                    </div>
+
+                    <button
+                        class="play-button"
+                        id="playButton"
+                        type="button"
+                        aria-label="Відтворити"
+                        aria-pressed="false"
+                    >
+                        <svg
+                            id="playIcon"
+                            viewBox="0 0 24 24"
+                            width="24"
+                            height="24"
+                            aria-hidden="true"
+                        >
+                            <path d="M8 5v14l11-7z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="progress-container">
+                    <input
+                        class="progress"
+                        id="progress"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="0.1"
+                        aria-label="Перемотування аудіо"
+                        style="--progress: 0%"
+                    >
+
+                    <div class="time">
+                        <time id="currentTime" datetime="PT0S">00:00</time>
+                        <time id="duration" datetime="PT18M40S">18:40</time>
+                    </div>
+                </div>
+
+                <p class="player-status" id="playerStatus" aria-live="polite">
+                    Відтворення призупинено
+                </p>
+            </div>
+
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
